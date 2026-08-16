@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DevOps Micro Internship Cohort 3 Week 6 Assignment — Deploying EpicBook on an Ubuntu EC2 VM with MySQL RDS and a secure AWS network.">
+  <title>DMI Cohort 3 — Week 6 Assignment Completed</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      line-height: 1.7;
+      background: #f5f7fb;
+      color: #172033;
+    }
+    header {
+      background: linear-gradient(135deg, #111827, #243b53);
+      color: white;
+      padding: 70px 20px;
+    }
+    .container { max-width: 900px; margin: auto; }
+    .tag {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+    h1 { font-size: clamp(34px, 6vw, 58px); line-height: 1.1; margin: 0 0 20px; }
+    h2 { margin-top: 42px; font-size: 28px; }
+    h3 { margin-top: 28px; }
+    main { padding: 40px 20px 70px; }
+    article {
+      background: white;
+      border-radius: 18px;
+      padding: 42px;
+      box-shadow: 0 10px 35px rgba(15, 23, 42, .08);
+    }
+    .lead { font-size: 19px; color: #43506a; }
+    .card {
+      background: #f8fafc;
+      border-left: 4px solid #334155;
+      padding: 18px 20px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+    ul { padding-left: 24px; }
+    li { margin: 8px 0; }
+    .flow {
+      background: #111827;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 600;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .takeaway {
+      font-size: 20px;
+      font-weight: 700;
+      padding: 24px;
+      border-radius: 12px;
+      background: #eef2ff;
+      margin-top: 30px;
+    }
+    a { color: #1d4ed8; }
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      color: #64748b;
+      font-size: 14px;
+    }
+    @media (max-width: 650px) {
+      article { padding: 25px; }
+      header { padding: 50px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="tag">DevOps Micro Internship · DMI Cohort 3 · Week 6</div>
+    <h1>🚀 Week 6 Assignment Completed!</h1>
+    <p>Deploying EpicBook on an Ubuntu VM with MySQL RDS and a Secure Cloud Network</p>
+  </div>
+</header>
+
+<main>
+  <article class="container">
+
+    <p class="lead">
+      I’m excited to share my progress from Assignment 4: Deploying EpicBook on an Ubuntu VM
+      with MySQL RDS and a Secure Cloud Network as part of the DevOps Micro Internship (DMI)
+      Cohort 3 with Agentic AI.
+    </p>
+
+    <p>
+      For this assignment, I deployed a full AWS-based application architecture designed around
+      security, network segmentation, and end-to-end connectivity.
+    </p>
+
+    <h2>☁️ What I Built</h2>
+
+    <h3>🔹 AWS VPC Architecture</h3>
+    <ul>
+      <li>Created a custom VPC: <strong>10.0.0.0/16</strong></li>
+      <li>Configured separate public and private subnets</li>
+      <li>Attached and configured an Internet Gateway</li>
+      <li>Configured routing for the public subnet</li>
+    </ul>
+
+    <h3>🔹 Security & Networking</h3>
+    <ul>
+      <li>Implemented separate security groups for EC2 and RDS</li>
+      <li>Restricted SSH access to my IP</li>
+      <li>Allowed HTTP/HTTPS where required</li>
+      <li>Restricted MySQL <strong>3306</strong> access to the EC2 security group instead of exposing the database publicly</li>
+      <li>Configured RDS with <strong>Public Access: No</strong></li>
+    </ul>
+
+    <h3>🔹 Compute & Web Server</h3>
+    <ul>
+      <li>Deployed an Ubuntu EC2 instance</li>
+      <li>Installed and configured Node.js</li>
+      <li>Installed and configured npm</li>
+      <li>Installed and configured Nginx</li>
+      <li>Installed the MySQL client</li>
+      <li>Configured Nginx as the web server and reverse proxy</li>
+    </ul>
+
+    <h3>🔹 Database</h3>
+    <ul>
+      <li>Deployed MySQL RDS inside the private network</li>
+      <li>Created the <strong>epicbook</strong> database</li>
+      <li>Connected to RDS securely from EC2</li>
+      <li>Verified database connectivity and tables</li>
+    </ul>
+
+    <h3>🔹 Application Deployment</h3>
+    <ul>
+      <li>Cloned the EpicBook application from GitHub</li>
+      <li>Installed Node.js dependencies</li>
+      <li>Configured environment variables for RDS connectivity</li>
+      <li>Started the Node/Express backend</li>
+      <li>Verified the application was listening and responding</li>
+    </ul>
+
+    <h3>🔹 End-to-End Testing</h3>
+    <p>Successfully tested the flow:</p>
+    <div class="flow">
+      User → Internet → Nginx → Node.js/Express → Private MySQL RDS
+    </div>
+
+    <p>
+      This project gave me practical experience with AWS networking, EC2, RDS, security groups,
+      Linux administration, Nginx, Node.js, MySQL, environment configuration, and troubleshooting
+      cloud connectivity issues.
+    </p>
+
+    <div class="card">
+      <strong>💡 What I learned</strong><br>
+      One of the biggest lessons from this assignment was that getting an application running is
+      only part of the job — understanding why components cannot communicate, how security groups
+      control traffic, and how to troubleshoot each layer is equally important.
+    </div>
+
+    <div class="takeaway">
+      💡 Key takeaway: Secure cloud architecture starts with proper network segmentation and
+      least-privilege access.
+    </div>
+
+    <p>
+      A big thank you to the DMI Cohort 3 community for the hands-on learning and continuous challenge.
+    </p>
+
+    <h2>🔗 DMI Resources</h2>
+    <p>
+      This post is part of the DevOps Micro Internship (DMI) with Agentic AI — Cohort 3 —
+      by <a href="https://www.linkedin.com/in/pravin-mishra-aws-trainer/" target="_blank" rel="noopener noreferrer">Pravin Mishra</a>.
+    </p>
+
+    <p>
+      <strong>My graded progress:</strong>
+      <a href="https://dmi.pravinmishra.com/s/adeitup11.html" target="_blank" rel="noopener noreferrer">
+        View my DMI progress
+      </a>
+    </p>
+
+    <p>
+      <strong>Start your DevOps journey:</strong>
+      <a href="https://dmi.pravinmishra.com/?utm_source=student&utm_medium=ps-blog&utm_campaign=cohort3"
+         target="_blank" rel="noopener noreferrer">
+        DMI Cohort 3
+      </a>
+    </p>
+
+  </article>
+</main>
+
+<footer>
+  © 2026 · DMI Cohort 3 · Week 6 · EpicBook AWS Deployment
+</footer>
+
+</body>
+</html>
